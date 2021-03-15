@@ -31,6 +31,28 @@ Note: Block level elements and elements like script and style are already prohib
 - `tagWhitelist`: Only allows selected tags in the content, e.g. `"tagWhitelist": ['a', 'em']` would only allow a and em tags, but would remove e.g. a strong tag.
 - `tagBlacklist`: Removes certain tags from the content, e.g. `"tagBlacklist": ['a']` would remove all `<a>` tags.
 
+### Character length
+
+When a value is specified for at least one of the four character length properties the editor will display an inline counter just below the directive, and a panel in the sidebar. The editor will still save the document if requirements are not met, but publishing will not be possible until the `minLength` and `maxLength` requirements are satisfied. Any combination of these four properties can be used, but there values should be in an order where `minLength <= recommendedMinLength <= recommendedMaxLength <= maxLength`.
+
+`minLength`, number
+
+Defines the minimum length in characters that the text must contain. Use a value of `1` to make the content required. Publishing will not be posible if the value is not reached.
+
+`maxLength`, number
+
+Defines the maximum length in characters that the text must contain. Publishing will not be posible if the value is exceeded.
+
+`recommendedMinLength`, number
+
+Defines the minimum length in characters that the text should contain. Use a value of `1` to recommend adding content.
+
+`recommendedMaxLength`, number 
+
+Defines the maximum length in characters that the text should contain.
+
+![Char Limit UI](./char-limit.png)
+
 ### Other
 
 `excludeFromTextCount`, true | false
@@ -44,9 +66,3 @@ The default placeholder that is shown in the editor as long as the directive is 
 `optional`, true | false
 
 If optional is set to true, then the directive will only be rendered if a value is actually filled in, otherwise the tag is skipped.
-
-`maxLength`, number
-
-Defines the maximum lenght in characters that the text may contain. The editor will display a text counter next to the directive. In the editor you can go over the limit, but while the limit is exceeded, publishing is not possible.
-
-![Char Limit UI](./char-limit.png)
