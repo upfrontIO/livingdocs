@@ -8,6 +8,7 @@
 * [Project Config](reference-docs/project-config/README.md)
   * [Content Types](reference-docs/project-config/content_types.md)
   * [Media Types](reference-docs/project-config/media_types.md)
+  * [Notifications](reference-docs/project-config/notifications.md)
   * [Categories](reference-docs/project-config/categories.md)
   * [Settings](reference-docs/project-config/settings.md)
   * [Editor Settings](reference-docs/project-config/editor_settings.md)
