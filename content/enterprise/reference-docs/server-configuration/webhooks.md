@@ -11,6 +11,8 @@ menus:
   - `mediaLibraryEntry.create`
   - `mediaLibraryEntry.archive`
   - `mediaLibraryEntry.update`
+- One new webhook added in `release-2021-09`
+  - `mediaLibraryEntry.revoke`
 
 Webhooks are registered HTTP endpoints that are called on specific events.
 You can configure multiple webhooks that are called on only one or multiple events.
@@ -65,6 +67,7 @@ webhooks: {
       },
       'mediaLibraryEntry.create',
       'mediaLibraryEntry.archive',
+      'mediaLibraryEntry.revoke',
       'mediaLibraryEntry.update'
     ]
   }
@@ -168,6 +171,19 @@ The payload sent to your webhook endpoints looks like this. The `deliveryId` is 
   "mediaId": "PNIi08x4UdEA"
 }
 ```
+
+`mediaLibraryEntry.revoke`
+```json
+{
+  "event": "mediaLibraryEntry.revoke",
+  "deliveryId": "J1FrTJTNKKRoGmjBlQ3_e",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA"
+}
+```
+
 ## Securing your webhooks
 If you have defined a `secret` for your webhook, Livingdocs uses this to create a signature of the payload and sends it with the request in the HTTP header `x-livingdocs-signature`.
 The signature is created using HMAC-SHA256 and will be sent in `x-livingdocs-signature` in the form `sha256=<hex digest>` for example `sha256=d8a47af83666a771d57117aa28ef8d3243a3de43`.

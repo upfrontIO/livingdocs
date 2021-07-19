@@ -103,8 +103,9 @@ The following lists all events, before the comma, the name of the event and behi
 
 - mediaLibraryEntry {{< added-in release-2020-12 >}}
   - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
-  - mediaLibraryEntry.update, `(eventName, {userId, projectId, id})`
+  - mediaLibraryEntry.update, `(eventName, {userId, projectId, id, changes})`
   - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
+  - mediaLibraryEntry.revoke, `(eventName, {userId, projectId, mediaLibraryEntry})`
 
 - project
   - project.create, `(eventName, {project})`
